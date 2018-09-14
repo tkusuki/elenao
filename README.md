@@ -1,24 +1,31 @@
-# README
+# #eleNÃO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto #eleNÃO
 
-Things you may want to cover:
+## Requisitos
 
-* Ruby version
+* Ruby 2.5+
+* Docker 1.12+
 
-* System dependencies
+## Setup
 
-* Configuration
+```
+git clone git@github.com:tkusuki/elenao.git
 
-* Database creation
+cd elenao
 
-* Database initialization
+docker-compose run web rake db:create db:setup
 
-* How to run the test suite
+docker-compose up
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+A aplicação estará disponível em `localhost`
 
-* Deployment instructions
+## Rodando os testes
 
-* ...
+```
+docker-compose run --rm web bash
+
+rspec
+
+```
